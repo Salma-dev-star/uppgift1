@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, View, Text } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -7,46 +7,45 @@ import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <View style={{ backgroundColor: "blue", flex: 1 }}>
+
+      <View style={{ backgroundColor: "red", height: 150, justifyContent: "center", alignItems: "center" }}>
+        <Text style={{ fontSize: 30 }}>Röd</Text>
+      </View>
+
+
+
+      <View style={{ height: 150, flexDirection: "row" }}>
+
+        <View style={{ backgroundColor: "green", flex: 1, alignItems: "flex-start" }}>
+          <Text style={{ fontSize: 30 }}>Grön</Text>
+        </View>
+        <View style={{ backgroundColor: "yellow", flex: 1 }}>
+          <Text style={{ fontSize: 30 }}>Gul</Text>
+        </View>
+
+      </View>
+
+
+
+      <View style={{ height: 100, flexDirection: "row" }}>
+
+        <View style={{ backgroundColor: "red", flex: 80, justifyContent: "center", alignItems: "center" }} />
+        <Text style={{ fontSize: 30 }}></Text><View>
+        </View>
+
+        <View style={{ backgroundColor: "black", flex: 20, justifyContent: "center", alignItems: "center" }} />
+
+
+      </View>
+
+      <View style={{ flex: 1 }} />
+
+      <View style={{ backgroundColor: "orange", height: 40, alignItems: "flex-end" }}>
+        <Text style={{ fontSize: 30 }}>Orange</Text>
+      </View>
+    </View>
+
   );
 }
 
